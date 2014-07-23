@@ -7,8 +7,8 @@ class ConfigError(Exception):
 def configure(app):
     c = app.config
 
-    app.debug   = _switch('DEBUG', False)
-    app.testing = _switch('TESTING', False)
+    app.debug   = True#
+    app.testing = True#
 
     c['CSRF_ENABLED'] = _switch('CSRF_ENABLED', True)
     c['AUTH_ON']      = _switch('AUTH_ON', True)
@@ -20,6 +20,7 @@ def configure(app):
     c['RECAPTCHA_PRIVATE_KEY'] = env.get('RECAPTCHA_PRIVATE_KEY')
 
     # Optional settings
+    print('Hello FRom the config' + app.instance_path)
     c.setdefault('SQLALCHEMY_DATABASE_URI', env.get('DATABASE_URL',
                                                     'sqlite:///%s/annotateit.db' % app.instance_path))
     c.setdefault('DEFAULT_MAIL_SENDER', env.get('DEFAULT_MAIL_SENDER',
