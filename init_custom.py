@@ -14,7 +14,7 @@ if __name__ == '__main__':
 
     print("\nCreating SQLite database...", end="")
     app = annotateit.create_app()
-    annotateit.create_db
+    annotateit.create_db(app)
 
     print("done.\n")
 
