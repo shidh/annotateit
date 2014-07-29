@@ -6,5 +6,5 @@
   };
   s = document.body.appendChild(document.createElement('script'));
   s.language = 'javascript';
-  s.src = 'http://assets.annotateit.org/bookmarklet/bootstrap.js';
+  s.src = 'http://vm52.mpdl.mpg.de/js/bootstrap.js';
 })(this, this.document);
