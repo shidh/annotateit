@@ -185,7 +185,8 @@ def home_for_user(username):
                            user=g.user,
                            bookmarklet=bookmarklet,
                            annotations=annotations,
-                           stats=stats)
+                           stats=stats
+                           )
 
 @user.route('/<username>', methods=['POST'])
 @util.require_user

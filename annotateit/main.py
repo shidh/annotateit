@@ -110,7 +110,7 @@ def auth_token():
             headers[ac + 'Max-Age']       = '86400'
 
     if g.user:
-        c = Consumer.fetch('annotateit')
+        c = Consumer.fetch('admin') #Allen changed key to admin
         payload = {'consumerKey': c.key, 'userId': g.user.username, 'ttl': c.ttl}
         if g.user.is_admin:
             payload['admin'] = True

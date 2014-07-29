@@ -28,7 +28,7 @@ def configure(app):
 
     # ElasticSearch config
     c.setdefault('ELASTICSEARCH_HOST', env.get('ELASTICSEARCH_HOST', 'http://127.0.0.1:9200'))
-    c.setdefault('ELASTICSEARCH_INDEX', env.get('ELASTICSEARCH_INDEX', 'annotateit'))
+    c.setdefault('ELASTICSEARCH_INDEX', env.get('ELASTICSEARCH_INDEX', 'annotator'))
 
     # Bonsai (on Heroku)
     bonsai_url = env.get('BONSAI_URL')

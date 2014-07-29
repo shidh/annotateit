@@ -42,7 +42,7 @@ if __name__ == '__main__':
 
     ckey = raw_input("Primary consumer key [annotateit]: ").strip()
     if not ckey:
-        ckey = 'annotateit'
+        ckey = 'annotateit'# Allen change key to admin
 
     with app.test_request_context():
         print("\nCreating admin user... ", end="")
