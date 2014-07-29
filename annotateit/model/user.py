@@ -55,7 +55,7 @@ class User(db.Model, Timestamps):
     @property
     def consumer(self):
         if not hasattr(self, '_consumer'):
-            self._consumer = Consumer.fetch('admin') # Allen change to admin
+            self._consumer = Consumer.fetch('annotateit') # Allen change to admin
         return self._consumer
 
     @property
