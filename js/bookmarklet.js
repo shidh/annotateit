@@ -2,7 +2,7 @@
   window._annotatorConfig = {
     "auth": { "tokenUrl": "{{ root }}/api/token" },
     "store": { "prefix": "{{ root }}/api" },
-    "tags": true
+    "tags": true,
   };
   s = document.body.appendChild(document.createElement('script'));
   s.language = 'javascript';
