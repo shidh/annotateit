@@ -6,10 +6,15 @@
   export ELASTICSEARCH_HOST='http://127.0.0.1:9200'
   export ELASTICSEARCH_INDEX='annotator'
 
+  export AUTH_ON = False
+  export AUTHZ_ON = False
+  
+  
   virtualenv pyenv
   . pyenv/bin/activate
   pip install -r requirements.txt
   #python init_custom.py
+
 
 
   #consumer = readlift
