@@ -6,8 +6,8 @@
   export ELASTICSEARCH_HOST='http://127.0.0.1:9200'
   export ELASTICSEARCH_INDEX='annotator'
 
-  export AUTH_ON = False
-  export AUTHZ_ON = False
+  export AUTH_ON='False'
+  export AUTHZ_ON='False'
   
   
   virtualenv pyenv
