@@ -13,14 +13,14 @@
   virtualenv pyenv
   . pyenv/bin/activate
   pip install -r requirements.txt
-  #python init_custom.py
+  python bootstrap.py
 
 
 
   #consumer = readlift
   # Primary consumer secret: 4c4e8dd4-96e2-4f22-9d95-b4f9c712d70f
 
-  python run.py "$@"
+  #python run.py "$@"
 
 
 

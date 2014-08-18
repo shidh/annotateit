@@ -20,7 +20,7 @@ def configure(app):
     c['RECAPTCHA_PRIVATE_KEY'] = env.get('RECAPTCHA_PRIVATE_KEY')
 
     # Optional settings
-    print('Hello FRom the config' + app.instance_path)
+    print('Hello From the config' + app.instance_path)
     c.setdefault('SQLALCHEMY_DATABASE_URI', env.get('DATABASE_URL',
                                                     'sqlite:///%s/annotateit.db' % app.instance_path))
     c.setdefault('DEFAULT_MAIL_SENDER', env.get('DEFAULT_MAIL_SENDER',
