@@ -10,13 +10,28 @@
   <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-
   <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}">
   <link href='http://fonts.googleapis.com/css?family=Arvo:400,700|Inconsolata' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='annotorious.css') }}"/>
+  <link rel="stylesheet" href="http://assets.annotateit.org/annotator/v1.2.7/annotator.min.css">
 
-  <script type="text/javascript" href="{{ url_for('static', filename='annotorious.okfn.0.3.js') }}"></script>
+<!--js -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<!--  
+-->
+  <script src="http://assets.annotateit.org/annotator/v1.2.7/annotator-full.js"></script>
+  <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/moment.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+
+
+  <!-- richText Pluging -->
+        <script src="http://danielcebrian.com/richText-annotation/lib/tinymce/tinymce.min.js"></script><!--tinymce for richText-->
+        <script src="http://danielcebrian.com/richText-annotation/src/richText-annotator.js"></script>
+        <link href="http://danielcebrian.com/richText-annotation/src/richText-annotator.css" rel="stylesheet">
+
+
   {% block head %}
   {% endblock %}
   {% if not g.debug %}
@@ -31,13 +46,37 @@
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
-
   </script>
   {% endif %}
+ 
+ <script type="text/javascript">
+    $(document).ready(function() {
+
+        var optionsRichText = {
+                tinymce:{
+                                selector: "li.annotator-item textarea",
+                                plugins: "media image insertdatetime link code",
+                                menubar: false,
+                                toolbar_items_size: 'small',
+                                extended_valid_elements : "iframe[src|frameborder|style|scrolling|class|width|height|name|align|id]",
+                                toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media rubric | code ",
+                }
+                };
+                $("div#airlock").annotator().annotator('addPlugin','RichText',optionsRichText).annotator('addPlugin','Store',{
+                                prefix: 'http://vm52.mpdl.mpg.de:8080/api',
+                                annotationData: {uri:'http://vm52.mpdl.mpg.de:8080'},
+                                loadFromSearch:{
+                                        limit:10000000,
+                                        uri: 'http://vm52.mpdl.mpg.de:8080'
+                                }
+                });
+    });
+    </script>
 </head>
 <body>
-  <div class="container">
-    <header class=row>
+  <div class="container" id="airlock">
+
+  <header class=row>
       {% block masthead %}
       <h1 class=span5>
         <a class=nounderline href="{{url_for('main.index')}}" title="The AnnotateIt Homepage">
@@ -109,12 +148,14 @@
       </ul>
       {% endblock %}
     </footer>
-  </div>
-
+<!--  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-  <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.min.js') }}"></script>
   <script src="{{ url_for('static', filename='vendor/moment.min.js') }}"></script>
   <script src="{{ url_for('static', filename='main.js') }}"></script>
+-->
   {% block script %}{% endblock %}
+
+  </div>
 </body>
 </html>

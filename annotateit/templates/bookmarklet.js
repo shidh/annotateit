@@ -1,1 +1,1 @@
-(function(a,b){a._annotatorConfig={auth:{tokenUrl:"{{ root }}/api/token"},store:{prefix:"{{ root }}/api"},tags:!0},s=b.body.appendChild(b.createElement("script")),s.language="javascript",s.src="http://vm52.mpdl.mpg.de/js/bootstrap.js"})(this,this.document);
+(function(a,b){a._annotatorConfig={auth:{tokenUrl:"{{ root }}/api/token"},store:{prefix:"{{ root }}/api"},tags:!0};s=b.body.appendChild(b.createElement("script")),s.language="javascript",s.src="http://vm52.mpdl.mpg.de/js/bootstrap.js"})(this,this.document);
