@@ -5,10 +5,10 @@
   export RECAPTCHA_PRIVATE_KEY='6Lc0U-MSAAAAANsOXWbMQxQ_SYwgBbnm-JM_mQXB'
   export ELASTICSEARCH_HOST='http://127.0.0.1:9200'
   export ELASTICSEARCH_INDEX='annotator'
-  export AUTH_ON='False'
-  export AUTHZ_ON='False'
+  export AUTH_ON='Ture'
+  export AUTHZ_ON='Ture'
   
-  virtualenv pyenv
+  #virtualenv pyenv
   . pyenv/bin/activate
   pip install -r requirements.txt
   #python init_custom.py
