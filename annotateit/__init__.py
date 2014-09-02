@@ -27,12 +27,10 @@ def create_app():
     app = Flask(__name__)
 
     configure(app)
-    print(app.config.get('SQLALCHEMY_DATABASE_URI',None))#
     db = SQLAlchemy(app)#
 
     # Configure database
     db.init_app(app)
-    print(db.app.config.get('SQLALCHEMY_DATABASE_URI',None))#
     # Configure mailer
     mail.init_app(app)
     app.extensions['mail'] = mail
