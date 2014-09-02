@@ -1,6 +1,9 @@
 #!/bin/sh
 #By Allen
-#
+
+#This script is used for initialization and starting the web app
+#Please run bootstrap.py before you run me, *IF* it is the *FIRST* time
+#you start annotator.
 
 #init some environment variables which are needed by annotator
 export SECRET_KEY="DibR3IsUqANtD6aBnMz9y+4jHubdOOYmGMsd8m7IEcI="
