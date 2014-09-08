@@ -20,7 +20,7 @@ if __name__ == '__main__':
     print("\nCreating SQLite database and ElasticSearch indices... ", end="")
 
     app = annotateit.create_app()
-    annotateit.create_indices(app)
+    #annotateit.create_indices(app)
 
     migrate_args = dict(url=app.config['SQLALCHEMY_DATABASE_URI'], debug='False', repository='migration')
     migrate.version_control(**migrate_args)
