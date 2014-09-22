@@ -11,18 +11,6 @@ usage()
 }
 
 #Receiving the value of the parameter
-start=1;
-while [ $# -ge 0 ]
-  do
-    case $1 in
-              -help|-h|--help)usage
-                break
-                ;;
-              *)usage
-                break
-                ;;
-  esac
-  done
 . ~/.bashrc
 
 sudo rm -rf /opt/python2.7/bin/easy_install* /opt/python2.7/bin/pip* /opt/python2.7/bin/virtualenv*
@@ -40,6 +28,13 @@ else
 fi
 
 sudo /opt/python2.7/bin/easy_install  virtualenv
+sudo rm -rf /usr/bin/easy_install
+sudo rm -rf /usr/local/bin/pip
+sudo rm -rf /usr/local/bin/virtualenv
+sudo ln /opt/python2.7/bin/easy_install  /usr/bin/easy_install
+sudo ln /opt/python2.7/bin/pip /usr/local/bin/pip
+sudo ln /opt/python2.7/bin/virtualenv /usr/local/bin/virtualenv
+
 echo""
 echo""
 echo "####pip version now is: "
