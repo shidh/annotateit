@@ -1,6 +1,28 @@
 #!/bin/bash
 #
+#help information
+usage()
+{
+   echo " USAGE: $0  [pip version number]"
+   echo ""
+   echo " Example: updatePip.sh 1.2.1"
+   echo " version can be 1.5.6, 1.2.1 or so on."
+   exit 1
+}
 
+#Receiving the value of the parameter
+start=1;
+while [ $# -ge 0 ]
+  do
+    case $1 in
+              -help|-h|--help)usage
+                break
+                ;;
+              *)usage
+                break
+                ;;
+  esac
+  done
 . ~/.bashrc
 
 sudo rm -rf /opt/python2.7/bin/easy_install* /opt/python2.7/bin/pip* /opt/python2.7/bin/virtualenv*
