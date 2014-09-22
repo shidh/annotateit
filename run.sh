@@ -45,9 +45,9 @@ export ELASTICSEARCH_INDEX='annotator'
 export AUTH_ON='Ture'
 export AUTHZ_ON='Ture'
 
-alias pip='/opt/python2.7/bin/pip'
-alias easy_install='/opt/python2.7/bin/easy_install'
-alias virtualenv='/opt/python2.7/bin/virtualenv'
+#alias pip='/opt/python2.7/bin/pip'
+#alias easy_install='/opt/python2.7/bin/easy_install'
+#alias virtualenv='/opt/python2.7/bin/virtualenv'
 
 #create a new virtual env of Python
 if [ $start = 0 ];then
