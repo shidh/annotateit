@@ -51,7 +51,7 @@ export AUTHZ_ON='Ture'
 
 #create a new virtual env of Python
 if [ $start = 0 ];then
-  virtualenv --no-pip pyenv
+  virtualenv pyenv
 fi
 #active it and install required dependencies, see setup.py and requirements.txt
 if [ -f "./pyenv/bin/activate" ]; then
