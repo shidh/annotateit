@@ -16,26 +16,6 @@ usage()
    exit 1
 }
 
-#Receiving the value of the parameter
-start=1;
-while [ $# -ge 0 ]
-  do
-    case $1 in
-              init) let start=0;
-                break
-                ;;
-              start) let start=1;
-                break
-                ;;
-              -help|-h|--help)usage
-                break
-                ;;
-              *)usage
-                break
-                ;;
-  esac
-  done
-
 #init some environment variables which are needed by annotator
 export SECRET_KEY="DibR3IsUqANtD6aBnMz9y+4jHubdOOYmGMsd8m7IEcI="
 export RECAPTCHA_PUBLIC_KEY='6Lc0U-MSAAAAAFBFR8WI19Jj5bcVdYXg45kCvW0m'
