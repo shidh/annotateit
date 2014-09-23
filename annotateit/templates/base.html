@@ -68,41 +68,6 @@
     </article>
 
     <hr>
-    <footer>
-      {% block footer %}
-      <p>
-        Annotator is developed by the
-        <img src="http://assets.okfn.org/images/logo/okf_logo_white_and_green_tiny.png"
-             id="okf-logo">
-        <a href="http://okfn.org">Open Knowledge Foundation</a>
-        with support from the
-        <a href="http://www.shuttleworthfoundation.org/">Shuttleworth Foundation</a>.
-        Go see what other cool stuff we're doing at the moment!
-      </p>
-
-      <ul class=inline>
-        <li>&copy; 2009&ndash;2014 <a href="http://okfn.org/">Open Knowledge Foundation</a> </li>
-        <li>
-          <a href="http://opendefinition.org/okd/" class=nounderline>
-          <img alt="This Content and Data is Open" src="http://assets.okfn.org/images/ok_buttons/oc_80x15_blue.png">
-          </a>
-        </li>
-        <li>
-          <a href="http://opendefinition.org/ossd/" class=nounderline>
-          <img alt="This Content and Data is Open" src="http://assets.okfn.org/images/ok_buttons/os_80x15_blue.png">
-          </a>
-        </li>
-      </ul>
-
-      <ul class=inline>
-        <li> <a href="https://github.com/okfn/annotator/">Annotator on Github</a> </li>
-        <li> <a href="{{ url_for('store.root') }}">API</a> </li>
-        <li> <a href="http://docs.annotatorjs.org/en/latest/storage.html">API Docs</a> </li>
-        <li> <a href="{{ url_for('main.contact') }}">Contact Us</a> </li>
-        <li> <a href="http://okfn.org/privacy-policy/">Privacy Policy</a>   </li>
-      </ul>
-      {% endblock %}
-    </footer>
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
